@@ -1,0 +1,31 @@
+body {
+  background-image: url("http://cdn.bigbangfish.com/555/Farm-animals-wallpapers/Farm-animals-wallpapers-3.jpg");
+
+}
+
+h1, a {
+  color: red;
+  text-shadow: 0 0 4px white;
+}
+.view {
+  background-color: #cff;
+  border-radius: 4px;
+}
+
+.name {
+  border-bottom: 6px solid red;
+}
+
+.description {
+  border-bottom: 2px solid red;
+}
+
+.header {
+  padding: 6px;
+  background-color: #cff;
+  border-radius: 6px;
+}
+
+.fav {
+  margin: 4px;
+}

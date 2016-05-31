@@ -1,0 +1,17 @@
+<div class="row">
+  <h3 class="two columns offset-by-five header">&#x2661;: {{favoritesCount}}</h3>
+</div>
+
+<div class="row">
+  <h3 class="five columns offset-by-one">Your saved animals.</h3>
+</div>
+
+<container ng-repeat="favorite in favorites">
+  <div class="row fav">
+    <img class="five columns offset-by-one" ng-src="{{favorite.picture}}" />
+    <div class="six columns">
+      <h3 class="name">{{favorite.name}}</h3>
+      <p class="description">{{favorite.description}}</p>
+    </div>
+  </div>
+</container>

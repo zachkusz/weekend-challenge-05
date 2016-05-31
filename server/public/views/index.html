@@ -1,0 +1,39 @@
+<!--start mongo server w/ mongod set up database with robomongo
+set up all the mongoose server module magic -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find-a-Pet</title>
+  <script src="../vendors/angular.min.js"></script>
+  <script src="../vendors/angular-route.min.js"></script>
+  <script src="../scripts/clientapp.js"></script>
+  <!--controllers-->
+  <script src="../scripts/homeController.js"></script>
+  <script src="../scripts/favoritesController.js"></script>
+  <!-- skeleton and css -->
+  <link rel="stylesheet" href="/styles/normalize.css" />
+  <link rel="stylesheet" href="/styles/skeleton.css" />
+  <link rel="stylesheet" href="/styles/stylesheet.css" />
+</head>
+
+<body class="container" ng-app="petApp">
+
+  <div class="row">
+    <h1 class="four columns offset-by-four">Find-a-Pet</h1>
+  </div>
+  
+  <div class="row">
+    <button class="four columns offset-by-two"><a href="#favorites">Favorites</a></button>
+    <button class="four columns"><a href="#home">Home</a></button>
+  </div>
+
+  <div class="row">
+    <p class="four columns header offset-by-four">
+      Welcome to Find-a-Pet! The complex solution to the pet finding problom
+      you didn't have... until now!</p>
+  </div>
+
+
+  <main class="view" ng-view></main>
+</body>
+</html>

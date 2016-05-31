@@ -1,0 +1,3 @@
+database used 'favPets'
+
+collection used 'favorites'
