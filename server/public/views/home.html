@@ -24,8 +24,8 @@
 </div>
 
 <div class="row">
-  <img class="six columns" ng-src="{{picture}}"/>
-  <div class="six columns">
+  <img ng-if="picture" class="five columns offset-by-one" ng-src="{{picture}}"/>
+  <div class="five columns">
     <button ng-if="name != null" ng-click="favoritePet()">Save to Favorites</button>
     <h3 ng-if="animalType != null" class="name">{{name}}</h3>
     <p ng-if="animalType != null" class="description">{{description}}</p>

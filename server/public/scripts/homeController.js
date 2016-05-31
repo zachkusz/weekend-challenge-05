@@ -4,11 +4,11 @@ app.controller('HomeController', ['$scope','$http', function($scope, $http) {
 
   //displays number of favorites animals
   getFavorites();
-  $scope.favoritesCount = 0;
   function getFavorites() {
      $http.get('/favorites')
      .then(function (response) {
-      //increments favorites count based on number of animals in the array
+      // resets then increments favorites count based on number of animals in the array
+      $scope.favoritesCount = 0;
       response.data.forEach(function(){
         $scope.favoritesCount++;
       });
@@ -54,6 +54,7 @@ app.controller('HomeController', ['$scope','$http', function($scope, $http) {
      $http.post('/favorites', data)
      .then(function () {
        console.log('POST /favorites');
+       getFavorites();
      });
    }
 
