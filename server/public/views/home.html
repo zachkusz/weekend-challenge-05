@@ -6,20 +6,21 @@
   <div class="row">
     <h3 class="five columns offset-by-one">Animal Type:</h3>
     <select class="four columns" ng-model="animalType">
-      <option ng-model="animalType" value="dog" selected>Dogs</option>
-      <option ng-model="animalType" value="cat">Cats</option>
-      <option ng-model="animalType" value="smallfurry">Lil Pets</option>
-      <option ng-model="animalType" value="reptile">Reptiles</option>
-      <option ng-model="animalType" value="bird">Birds</option>
-      <option ng-model="animalType" value="horse">Horses</option>
-      <option ng-model="animalType" value="pig">Piggies</option>
-      <option ng-model="animalType" value="barnyard">Misc Barn Pets</option>
+      <option value="dog" selected>Dogs</option>
+      <option value="cat">Cats</option>
+      <option value="smallfurry">Lil Pets</option>
+      <option value="reptile">Reptiles</option>
+      <option value="bird">Birds</option>
+      <option value="horse">Horses</option>
+      <option value="pig">Piggies</option>
+      <option value="barnyard">Misc Barn Pets</option>
     </select>
   </div>
 </section>
 
 <div class="row">
-  <button ng-if="animalType != null" class="five columns offset-by-one" ng-click="getRandomPet()">Get a Random {{animalType}}</button>
+  <button ng-if="animalType != null" class="five columns offset-by-one" ng-click="getRandomPet()">
+    Get a Random {{animalType}}</button>
 </div>
 
 <div class="row">
