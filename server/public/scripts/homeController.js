@@ -1,20 +1,8 @@
-app.controller('HomeController', ['$scope','$http', function($scope, $http) {
+app.controller('HomeController', ['$scope','$http','DataFactory', function($scope, $http, DataFactory) {
 
   console.log('home controller running');
 
-  //displays number of favorites animals
-  getFavorites();
-  function getFavorites() {
-     $http.get('/favorites')
-     .then(function (response) {
-      // resets then increments favorites count based on number of animals in the array
-      $scope.favoritesCount = 0;
-      response.data.forEach(function(){
-        $scope.favoritesCount++;
-      });
-       console.log($scope.favoritesCount);
-     });
-   }
+  $scope.dataFactory = DataFactory;
 
    var key = '26c8db19eb970914fd86b9230e45863a';
    var baseURL = 'http://api.petfinder.com/';
@@ -51,10 +39,8 @@ app.controller('HomeController', ['$scope','$http', function($scope, $http) {
      data.name = $scope.name;
      data.description = $scope.description;
 
-     $http.post('/favorites', data)
-     .then(function () {
-       console.log('POST /favorites');
-       getFavorites();
+     $scope.dataFactory.factorySaveFavorite(data).then(function(){
+       $scope.favoritesCount = $scope.dataFactory.factoryGetFavorites().length;
      });
    }
 

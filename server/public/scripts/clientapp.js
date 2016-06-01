@@ -1,4 +1,4 @@
-var app = angular.module('petApp', ['ngRoute']); //check spelling of route and app name
+var app = angular.module('petApp', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider

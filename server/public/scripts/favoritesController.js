@@ -1,21 +1,17 @@
-app.controller('FavoritesController', ['$scope','$http', function($scope, $http) {
-  
-  console.log('favorites controller running');
+app.controller('FavoritesController', ['$scope','$http','DataFactory', function($scope, $http, DataFactory) {
 
-  getFavorites();
+  $scope.dataFactory = DataFactory;
+  $scope.favorites = [];
   $scope.favoritesCount = 0;
 
-  function getFavorites() {
-     $http.get('/favorites')
-     .then(function (response) {
-      //increments favorites count based on number of animals in the array
-      response.data.forEach(function(){
-        $scope.favoritesCount++;
-      });
-
-       $scope.favorites = response.data;
-       console.log('GET /favorites ', response.data);
-     });
-   }
+  if ($scope.dataFactory.factoryGetFavorites() === undefined) {
+    $scope.dataFactory.factoryRefreshFavoriteData().then(function(){
+      $scope.favorites = $scope.dataFactory.factoryGetFavorites();
+      $scope.favoritesCount = $scope.favorites.length;
+    });
+  } else {
+    $scope.favorites = $scope.dataFactory.factoryGetFavorites();
+    $scope.favoritesCount = $scope.favorites.length;
+  }
 
 }]);
